@@ -1,0 +1,716 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/*NAVBAR*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* ensure it stays on top */
+  background-color: #f8f8f8; /* same as original background */
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  background-color: #0055ff;
+  color: #fff !important;
+  border-radius: 4px;
+}
+
+/*HERO SECTION*/
+.hero {
+  display: flex;
+  margin-top: 80px;
+  padding: 60px;
+  background-color: #f0f4ff;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.signup-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0055ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px; /* adjust this value to control height */
+  object-fit: contain;
+}
+
+/*BENEFITS SECTION*/
+.benefits {
+  padding: 60px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.benefits h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.benefit-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.benefit-card {
+  flex: 1;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.benefit-icon {
+  font-size: 32px;
+  color: #0055ff;
+  margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 16px;
+  color: #555;
+}
+/*HOW IT WORKS SECTION*/
+.how-it-works {
+  background-color: #ffffff;
+  padding: 60px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.step {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.step-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #0055ff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  line-height: 40px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.step h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.step p {
+  font-size: 16px;
+  color: #555;
+}
+
+/*TESTIMONIALS SECTION*/
+.testimonials {
+  background-color: #f0f4ff;
+  padding: 60px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.testimonial-card {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.testimonial-card p {
+  margin-bottom: 15px;
+  color: #444;
+  font-size: 16px;
+}
+
+.testimonial-card h4 {
+  font-weight: normal;
+  color: #333;
+  font-size: 15px;
+}
+
+
+/*FOOTER SECTION*/
+.footer {
+  background-color: #f8f8f8;
+  padding: 50px 60px 20px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-brand p {
+  font-size: 16px;
+  color: #555;
+  max-width: 300px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #444;
+}
+
+.footer-social .social-icons a {
+  margin-right: 12px;
+  font-size: 24px;
+  color: #333;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #e1e1e1;
+  padding-top: 15px;
+}
+
+
+/* LOGIN PAGE */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.login-form .form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0055ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #0041cc;
+}
+
+.login-footer-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-footer-text a {
+  color: #0055ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* REGISTER PAGE */
+.register-container {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.register-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.register-form .form-group {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0055ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-button:hover {
+  background-color: #0041cc;
+}
+
+.register-footer-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-footer-text a {
+  color: #0055ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-footer-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* Task List */
+/* Main tasks container */
+.tasks-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Tasks header */
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 30px;
+}
+
+.tasks-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.new-task-btn {
+  padding: 10px 20px;
+  background-color: #2b7cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.new-task-btn:hover {
+  background-color: #1a5edb;
+}
+
+/* Modal */
+.task-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.task-modal.hidden {
+  display: none;
+}
+
+.task-modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.create-task-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b7cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.create-task-btn:hover {
+  background-color: #1a5edb;
+}
+
+/* Task list */
+.task-list-section {
+  margin-top: 2rem;
+}
+
+.task-list-section h2 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+.task-list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Task card styles (assumes you're injecting divs with .task-card) */
+.task-card {
+  background-color: #f5f8ff;
+  border-left: 4px solid #2b7cff;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+}
+
+.task-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.task-card p {
+  margin: 0.2rem 0;
+  font-size: 14px;
+}
+
+/*Pagination*/
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 10px;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #2b7cff;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#pagination-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+#pagination-numbers span {
+  padding: 6px 12px;
+  background-color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#pagination-numbers span.active {
+  background-color: #2b7cff;
+  color: white;
+}
+
+
+/* Task Details */
+/* Container */
+.task-details-container {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #2b7cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link i {
+  margin-right: 6px;
+}
+
+/* Task title */
+.task-details-card h1 {
+  font-size: 28px;
+  margin-bottom: 0.5rem;
+}
+
+/* Details section */
+.task-details-card p {
+  margin: 0.4rem 0;
+  font-size: 16px;
+}
+
+/* Status buttons */
+.task-status-controls {
+  margin-top: 1.5rem;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.status-btn {
+  padding: 8px 16px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.status-btn:hover {
+  background-color: #d4d4d4;
+}
+
+.status-btn[data-status="Running"] {
+  background-color: #ffe58f;
+}
+
+.status-btn[data-status="Ended"] {
+  background-color: #ffccc7;
+}
+
+.status-btn[data-status="Pending"] {
+  background-color: #bae7ff;
+}
+
+/* Progress Tracker */
+.task-progress {
+  margin-top: 2rem;
+}
+
+#progress-slider {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+#progress-value {
+  font-weight: 600;
+}

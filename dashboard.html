@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tasky Dashboard</title>
+  <link rel="stylesheet" href="css/dash.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Tasky</h2>
+    </div>
+
+  <nav class="sidebar-menu">
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+      <li><a href="tasks.html"><i class="fa-solid fa-tasks"></i> Tasks</a></li>
+      <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Calendar</a></li>
+      <li><a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a></li>
+      <li><a href="#"><i class="fa-solid fa-users"></i> Team</a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <h3>General</h3>
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+      <li><a href="#"><i class="fa-solid fa-circle-question"></i> Help</a></li>
+      <li><button id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+    </ul>
+  </div>
+</aside>
+
+  <!-- Main Dashboard Content -->
+  <main class="dashboard-main">
+    <!-- Top Bar -->
+    <header class="dashboard-topbar">
+      <input type="text" placeholder="Search task..." />
+
+      <div class="user-info">
+        <i class="fa-solid fa-bell"></i>
+        <span class="username">John Doe</span>
+        <span id="email">user@example.com</span>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="dashboard-header">
+      <div class="title-group">
+         <h1>Dashboard</h1>
+            <p>Plan, prioritize, and accomplish your tasks with ease.</p>
+     </div>
+      <button id="open-task-form" class="new-task-btn">+ New Task</button>
+    </section>
+
+    <!--Modal Task Form -->
+    <div id="task-modal" class="task-modal hidden">
+        <div class="task-modal-content">
+            <span id="close-task-form" class="close-icon">&times;</span>
+            <h2>Create New Task</h2>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Title</label>
+                    <input type="text" id="task-title" required placeholder="Task title" />
+                </div>
+
+                <div class="form-group">
+                    <label for="task-desc">Description</label>
+                    <textarea id="task-desc" required placeholder="Task description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-date">Due Date</label>
+                    <input type="date" id="task-date" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="task-assign">Assign To</label>
+                    <input type="text" id="task-assign" placeholder="User ID or email" />
+                </div>
+
+                <button type="submit" class="create-task-btn">Add Task</button>
+                </form>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card" id="total-projects">Total Projects: <span>0</span></div>
+      <div class="card" id="ended-projects">Ended Projects: <span>0</span></div>
+      <div class="card" id="running-projects">Running Projects: <span>0</span></div>
+      <div class="card" id="pending-projects">Pending Projects: <span>0</span></div>
+    </section>
+
+    <!-- Charts and Reminders -->
+   <section class="dashboard-widgets">
+  <!-- Project Analytics -->
+  <div class="project-analytics">
+    <h3>Project Analytics</h3>
+    <div id="analytics-chart" class="analytics-chart">
+      <div class="day-bar" data-day="S"><div class="bar" style="height: 40%;"></div><span>S</span></div>
+      <div class="day-bar" data-day="M"><div class="bar" style="height: 60%;"></div><span>M</span></div>
+      <div class="day-bar" data-day="T"><div class="bar" style="height: 50%;"></div><span>T</span></div>
+      <div class="day-bar" data-day="W"><div class="bar" style="height: 80%;"></div><span>W</span></div>
+      <div class="day-bar" data-day="T"><div class="bar" style="height: 30%;"></div><span>T</span></div>
+      <div class="day-bar" data-day="F"><div class="bar" style="height: 70%;"></div><span>F</span></div>
+      <div class="day-bar" data-day="S"><div class="bar" style="height: 20%;"></div><span>S</span></div>
+    </div>
+  </div>
+
+  <!-- Reminders -->
+  <div class="reminder-card">
+    <h3>Reminders</h3>
+    <p id="reminder-title">Loading reminder...</p>
+    <p id="reminder-time">Time: --</p>
+    <button>Set Reminder</button>
+  </div>
+
+  <!-- Reminder Modal -->
+<div id="reminder-modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="close-reminder-modal" class="close-icon">&times;</span>
+    <h2>Set a Reminder</h2>
+
+    <!-- Reminder Form -->
+    <form id="reminder-form">
+      <div class="form-group">
+        <label for="reminder-title">Title</label>
+        <input type="text" id="reminder-title-input" placeholder="Enter reminder title" required />
+      </div>
+
+      <div class="form-group">
+        <label for="reminder-start">Start Time</label>
+        <input type="time" id="reminder-start" required />
+      </div>
+
+      <div class="form-group">
+        <label for="reminder-stop">Stop Time</label>
+        <input type="time" id="reminder-stop" required />
+      </div>
+
+      <button type="submit" class="submit-btn">Save Reminder</button>
+    </form>
+
+    <!-- List of Reminders -->
+    <div class="reminder-list">
+      <h3>My Reminders</h3>
+      <ul id="reminders-container">
+        <!-- Rendered via JS -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Latest Tasks -->
+  <div class="tasks-list"> 
+    <h3>Tasks</h3> 
+    <ul id="tasks-list"> 
+      <!-- Latest 3 task titles will be rendered here via JS -->
+    </ul>
+  </div>
+</section>
+
+
+    <!-- Collaboration and Progress -->
+    <section class="dashboard-footer-widgets">
+      <div class="team-collaboration">
+        <h3>Team Collaboration</h3>
+        <button>Add Member</button>
+        <ul id="team-list">
+          <!-- Team members -->
+        </ul>
+      </div>
+
+      <div class="project-progress">
+        <h3>Project Progress</h3>
+        <div id="progress-circle">0%</div>
+      </div>
+
+      <div class="time-tracker">
+        <h3>Time Tracker</h3>
+        <div id="timer-display">00:00:00</div>
+        <button>▶</button>
+        <button>⏸</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/tasks/taskService.js"></script>
+  <script type="module" src="js/tasks/taskUI.js"></script>
+  <script type="module" src="js/tasks/taskUtils.js"></script>
+  <script type="module" src="js/auth/auth.js"></script>
+</body>
+</html>
