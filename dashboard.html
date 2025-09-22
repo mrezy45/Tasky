@@ -31,7 +31,7 @@
     <ul>
       <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
       <li><a href="#"><i class="fa-solid fa-circle-question"></i> Help</a></li>
-      <li><button id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+      <li><a href="index.html"><button id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></a></li>
     </ul>
   </div>
 </aside>
@@ -43,9 +43,9 @@
       <input type="text" placeholder="Search task..." />
 
       <div class="user-info">
+        <span class="username"></span>
+        <span id="email"></span>
         <i class="fa-solid fa-bell"></i>
-        <span class="username">John Doe</span>
-        <span id="email">user@example.com</span>
       </div>
     </header>
 
@@ -55,7 +55,7 @@
          <h1>Dashboard</h1>
             <p>Plan, prioritize, and accomplish your tasks with ease.</p>
      </div>
-      <button id="open-task-form" class="new-task-btn">+ New Task</button>
+      <button id="open-task-form" class="new-task-btn" type="button">+ New Task</button>
     </section>
 
     <!--Modal Task Form -->
@@ -196,5 +196,7 @@
   <script type="module" src="js/tasks/taskUI.js"></script>
   <script type="module" src="js/tasks/taskUtils.js"></script>
   <script type="module" src="js/auth/auth.js"></script>
+  <script type="module" src="js/dashboard-modal.js"></script>
+  <script type="module" src="js/dashboard-timer.js"></script>
 </body>
 </html>

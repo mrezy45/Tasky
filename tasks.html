@@ -32,7 +32,7 @@
     <ul>
       <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
       <li><a href="#"><i class="fa-solid fa-circle-question"></i> Help</a></li>
-      <li><button id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
+      <li><button id="logout-btn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button></li>
     </ul>
   </div>
 </aside>
@@ -42,10 +42,10 @@
   <main class="tasks-container">
     <div class="tasks-header">
         <h1>Welcome to Your Tasks List</h1>
-        <button id="open-task-form" class="new-task-btn">+ New Task</button>
+       <button id="open-task-form" class="new-task-btn">+ New Task</button>
     </div>
 
-    <!--Modal Task Form -->
+    <!--Modal Task Form (copied from dashboard.html for consistency) -->
     <div id="task-modal" class="task-modal hidden">
         <div class="task-modal-content">
             <span id="close-task-form" class="close-icon">&times;</span>
@@ -72,7 +72,7 @@
                 </div>
 
                 <button type="submit" class="create-task-btn">Add Task</button>
-                </form>
+            </form>
         </div>
     </div>
 
@@ -98,5 +98,6 @@
   <script type="module" src="js/tasks/taskDetails.js"></script>
   <script type="module" src="js/tasks/taskUtils.js"></script>
   <script type="module" src="js/auth/auth.js"></script>
+  <script type="module" src="js/tasks/tasks-details-modal.js"></script>
 </body>
 </html>

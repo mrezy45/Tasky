@@ -21,9 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const userData = userDoc.data();
 
       localStorage.setItem("taskyUser", JSON.stringify({
+        fullName: userData.fullName,
         username: userData.username,
         email: userData.email
-        }));
+      }));
       window.location.href = "dashboard.html";
     } else {
       alert("Invalid username or password");

@@ -94,3 +94,21 @@ export async function getPaginatedTasksForUser(email, pageSize = 3, lastVisibleD
     };
   }
 }
+
+// Fetch summary counts for the dashboard
+export async function getTasksSummary(email) {
+  const tasksRef = collection(db, "tasks");
+  const q = query(tasksRef, where("assignedTo", "==", email));
+  const snapshot = await getDocs(q);
+
+  let total = 0, ended = 0, running = 0, pending = 0;
+  snapshot.forEach(doc => {
+    total++;
+    const status = doc.data().status;
+    if (status === "Ended") ended++;
+    else if (status === "Running") running++;
+    else pending++;
+  });
+
+  return { total, ended, running, pending };
+}

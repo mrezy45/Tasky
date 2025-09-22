@@ -28,16 +28,18 @@ function renderTaskList(tasks) {
   tasks.forEach(task => {
     const taskCard = document.createElement('div');
     taskCard.classList.add('task-card');
+    taskCard.setAttribute('data-task-id', task.id); // Add data-task-id for modal
     taskCard.innerHTML = `
       <h3>${task.title}</h3>
       <p>${task.description}</p>
       <p><strong>Due:</strong> ${task.dueDate}</p>
       <p><strong>Assigned to:</strong> ${task.assignedTo}</p>
-      <a href="taskDetails.html?taskId=${task.taskId}" class="view-task-link">View Details</a>
+      <a href="#" class="view-task-link">View Details</a>
     `;
-    taskCard.addEventListener('click', () => {
-      localStorage.setItem("selectedTask", JSON.stringify(task));
-      window.location.href = `taskDetails.html?taskId=${task.taskId}`;
+    // Only open modal, do not navigate
+    taskCard.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Modal logic handled by tasks-details-modal.js
     });
     taskList.appendChild(taskCard);
   });
